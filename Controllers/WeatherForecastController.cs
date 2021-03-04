@@ -10,7 +10,7 @@ namespace WebApplication1.Controllers
 {
     [EnableCors("AllowSpecificOrigin")]
     [ApiController]
-    [Route("[controller]")]
+    [Route("/sample")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("test")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

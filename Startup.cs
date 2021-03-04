@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,6 +26,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddCors(options =>
             {
                 // this defines a CORS policy called "default"
@@ -49,6 +50,11 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
+            app.useSwagger();
+            app.UseSwaggerUI(c =>
+                {​​
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "DOC POC Download API V1");
+                }​​);
             app.UseHttpsRedirection();
 
             app.UseRouting();
