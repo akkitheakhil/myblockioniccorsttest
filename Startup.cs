@@ -52,9 +52,9 @@ namespace WebApplication1
 
             app.useSwagger();
             app.UseSwaggerUI(c =>
-                {​​
+                {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "DOC POC Download API V1");
-                }​​);
+                });
             app.UseHttpsRedirection();
 
             app.UseRouting();
